@@ -3,14 +3,20 @@ import Main from "./compo/Main";
 import Header from "./Header";
 import Work from "./compo/Work";
 import Projects from "./compo/Projects";
-import { useState } from "react";
 import Contact from "./compo/Contact";
 import Footer from "./compo/Footer";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 function App() {
 
-
   return (
+     <HelmetProvider>
+     <Helmet>
+        <title>Mohamed Attia</title>
+        <link rel="description" href="Welcome to my Portofolio" />
+      </Helmet>
     <div     >
+
       <Sidenav />
       <Main />
       <Work />
@@ -18,6 +24,7 @@ function App() {
       <Contact/>
       <Footer/>
     </div>
+    </HelmetProvider>
   );
 }
 
